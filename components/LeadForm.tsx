@@ -58,7 +58,31 @@ export function LeadForm({
     setPending(true);
     setMailto(buildMailto(payload));
 
+    const body = new URLSearchParams();
+    for (const [key, value] of form.entries()) {
+      if (typeof value === "string") body.append(key, value);
+    }
+    body.set("form-name", "lead");
+    body.set("intent", intent);
+
     try {
+      const netlify = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      const text = await netlify.text();
+      const accepted = netlify.ok && !text.includes("data-netlify");
+      if (accepted) {
+        setDone("email");
+        return;
+      }
+
+      if (process.env.NODE_ENV !== "development") {
+        setServerError("We could not send that just now.");
+        return;
+      }
+
       const response = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -85,17 +109,15 @@ export function LeadForm({
             <p className="kicker">Request received</p>
             <h2 className="mt-4 font-display text-4xl text-ink">Thank you.</h2>
             <p className="mt-4 leading-relaxed text-stone">
-              {done === "email"
-                ? `We have your note at ${site.email}. If you want to talk today, call us.`
-                : `Your request is recorded. Please also call ${site.phoneDisplay} or email ${site.email} so we can reach you right away.`}
+              {receivedCopy(done)}
             </p>
             <a href={`tel:${site.phoneTel}`} className="mt-8 inline-flex bg-gold px-6 py-3 text-[15px] text-ink">
               Call {site.phoneDisplay}
             </a>
           </div>
         ) : (
-          <form onSubmit={onSubmit} noValidate className="relative">
-            <Honeypot />
+          <form name="lead" method="POST" action="/__forms.html" data-netlify="true" data-netlify-honeypot="fax" onSubmit={onSubmit} noValidate className="relative">
+            <NetlifyFields intent={intent} />
             <p className="kicker">Get in touch</p>
             <div className="mt-4 space-y-3">
               <CardField id={`${base}-name`} label="Full name" name="name" autoComplete="name" placeholder="John Smith" error={errors.name} required />
@@ -144,17 +166,15 @@ export function LeadForm({
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-gold">Request received</p>
             <h2 className="mt-3 font-display text-4xl text-ink">Thank you.</h2>
             <p className="mt-4 leading-relaxed text-stone">
-              {done === "email"
-                ? `We have your note at ${site.email}. If you want to talk today, call us.`
-                : `Your request is recorded. Please also call ${site.phoneDisplay} or email ${site.email} so we can reach you right away.`}
+              {receivedCopy(done)}
             </p>
             <a href={`tel:${site.phoneTel}`} className="btn-gold mt-8">
               Call {site.phoneDisplay}
             </a>
           </div>
         ) : (
-          <form onSubmit={onSubmit} noValidate className="relative">
-            <Honeypot />
+          <form name="lead" method="POST" action="/__forms.html" data-netlify="true" data-netlify-honeypot="fax" onSubmit={onSubmit} noValidate className="relative">
+            <NetlifyFields intent={intent} />
             <p className="flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-gold">
               <span className="h-px w-8 bg-gold" aria-hidden="true" />
               Request a free estimate
@@ -216,17 +236,15 @@ export function LeadForm({
             <p className="text-[0.72rem] uppercase tracking-[0.28em] text-gold">Request received</p>
             <h2 className="mt-3 font-display text-4xl text-ink">Thank you.</h2>
             <p className="mt-4 leading-relaxed text-stone">
-              {done === "email"
-                ? `We have your note at ${site.email}. If you want to talk today, call us.`
-                : `Your request is recorded. Please also call ${site.phoneDisplay} or email ${site.email} so we can reach you right away.`}
+              {receivedCopy(done)}
             </p>
             <a href={`tel:${site.phoneTel}`} className="mt-8 inline-flex bg-gold px-6 py-3 text-[15px] text-ink">
               Call {site.phoneDisplay}
             </a>
           </div>
         ) : (
-          <form onSubmit={onSubmit} noValidate className="relative">
-            <Honeypot />
+          <form name="lead" method="POST" action="/__forms.html" data-netlify="true" data-netlify-honeypot="fax" onSubmit={onSubmit} noValidate className="relative">
+            <NetlifyFields intent={intent} />
             <div className="space-y-7">
               <StudioField id={`${base}-name`} label="Full name" name="name" autoComplete="name" error={errors.name} required />
               <StudioField id={`${base}-email`} label="Email address" name="email" type="email" autoComplete="email" error={errors.email} required />
@@ -271,9 +289,7 @@ export function LeadForm({
         <p className="text-[0.72rem] uppercase tracking-[0.28em] text-gold-deep">Request received</p>
         <h3 className="mt-3 font-display text-3xl text-ink">Thank you.</h3>
         <p className="mt-4 leading-relaxed text-stone">
-          {done === "email"
-            ? `We have your note at ${site.email}. If you want to talk today, call us.`
-            : `Your request is recorded. Please also call ${site.phoneDisplay} or email ${site.email} so we can reach you right away.`}
+          {receivedCopy(done)}
         </p>
         <a href={`tel:${site.phoneTel}`} className="btn-dark mt-6">
           Call {site.phoneDisplay}
@@ -283,8 +299,8 @@ export function LeadForm({
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative border border-sand border-t-2 border-t-gold bg-ivory p-6 md:p-8">
-      <Honeypot />
+    <form name="lead" method="POST" action="/__forms.html" data-netlify="true" data-netlify-honeypot="fax" onSubmit={onSubmit} noValidate className="relative border border-sand border-t-2 border-t-gold bg-ivory p-6 md:p-8">
+      <NetlifyFields intent={intent} />
 
       {intent === "quote" && !compact ? (
         <fieldset className="mb-6">
@@ -359,6 +375,21 @@ export function LeadForm({
         </p>
       </noscript>
     </form>
+  );
+}
+
+function receivedCopy(done: "email" | "stored") {
+  if (done === "email") return "The office has your request. If you want to talk today, call us.";
+  return `Your request is recorded. Please also call ${site.phoneDisplay} or email ${site.email} so we can reach you right away.`;
+}
+
+function NetlifyFields({ intent }: { intent: LeadIntent }) {
+  return (
+    <>
+      <input type="hidden" name="form-name" value="lead" />
+      <input type="hidden" name="intent" value={intent} />
+      <Honeypot />
+    </>
   );
 }
 

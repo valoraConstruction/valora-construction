@@ -41,7 +41,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-display text-3xl">Who else sees it</h2>
           <p className="mt-3 text-stone">
-            People at Valora who handle inquiries can see what you sent. If email delivery is turned on for the website, a transactional email provider delivers the form to {site.email}. That provider processes the message only to send it. We may also share information if the law requires it.
+            People at Valora who handle inquiries can see what you sent. The form is stored by our website host, Netlify. If notification email is turned on, Netlify sends a copy to {site.email}. Netlify processes the message only to store it and send that notice. We may also share information if the law requires it.
           </p>
         </section>
         <section>

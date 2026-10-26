@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forms</title>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <!-- Netlify reads this file at deploy time. The visible forms post here. -->
+    <form name="lead" method="POST" action="/__forms.html" data-netlify="true" netlify-honeypot="fax" hidden>
+      <input type="hidden" name="form-name" value="lead" />
+      <input type="hidden" name="intent" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="city" />
+      <input type="text" name="service" />
+      <textarea name="message"></textarea>
+      <input type="text" name="requestType" />
+      <input type="text" name="propertyType" />
+      <input type="text" name="timeline" />
+      <input type="text" name="fax" />
+    </form>
+  </body>
+</html>
