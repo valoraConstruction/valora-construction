@@ -21,10 +21,10 @@ export function ProcessSection({
     <section className="bg-[#f6f1e7] text-ink">
       <div className="w-full px-6 pt-16 pb-4 sm:px-10 sm:pt-20 sm:pb-6 lg:px-[11vw] lg:py-28">
         <div className="grid items-stretch gap-x-16 gap-y-8 lg:grid-cols-2 lg:gap-y-10">
-          <div className="flex flex-col lg:h-full">
+          <div className="flex min-w-0 flex-col lg:h-full">
             <p className="kicker">{kicker}</p>
-            <div className="mt-4 flex items-start justify-between gap-6 lg:block">
-              <h2 className="font-display text-4xl leading-tight sm:text-5xl">{title}</h2>
+            <div className="mt-4 flex flex-wrap items-start justify-between gap-x-6 gap-y-4 lg:block">
+              <h2 className="flex-[1_1_12rem] font-display text-[clamp(1.75rem,9.25vw,2.25rem)] leading-tight sm:text-5xl">{title}</h2>
               <span className="shrink-0 lg:hidden">
                 <Link href="/contact" className="btn-ghost whitespace-nowrap !px-3">
                   Contact us
@@ -45,7 +45,7 @@ export function ProcessSection({
               </div>
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex min-w-0 flex-col">
             <div className="hidden lg:block" aria-hidden="true">
               <p className="kicker invisible">{kicker}</p>
             </div>

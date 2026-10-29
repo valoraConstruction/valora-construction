@@ -15,6 +15,7 @@ export function Footer() {
             alt="Valora Construction"
             width={1024}
             height={226}
+            sizes="(min-width: 1024px) 16rem, (min-width: 640px) 14rem, 11.5rem"
             className="h-10 w-auto sm:h-12 lg:h-14"
           />
         </div>
@@ -24,7 +25,13 @@ export function Footer() {
         <div>
           <h2 className="text-[0.68rem] uppercase tracking-[0.28em] text-gold">Reach us</h2>
           <ul className="mt-4 space-y-3 text-sm text-ink/75">
-            <li>Tampa, Florida</li>
+            <li>
+              <a href={site.maps} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+                {site.address.street}
+                <br />
+                {site.address.city}, {site.address.region} {site.address.postalCode}
+              </a>
+            </li>
             <li>
               <a href={`tel:${site.phoneTel}`} className="text-gold-deep hover:text-gold">
                 {site.phoneDisplay}
@@ -46,7 +53,6 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-ink/75">
             <li><Link href="/" className="hover:text-gold">Home</Link></li>
             <li><Link href="/why-choose-us" className="hover:text-gold">Why Valora</Link></li>
-            <li><Link href="/before-and-after" className="hover:text-gold">Before & After</Link></li>
             <li><Link href="/contact" className="hover:text-gold">Contact</Link></li>
             <li><Link href="/contact" className="hover:text-gold">Request a Quote</Link></li>
             <li><Link href="/privacy" className="hover:text-gold">Privacy Policy</Link></li>

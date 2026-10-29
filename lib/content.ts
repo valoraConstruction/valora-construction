@@ -1,3 +1,6 @@
+import type { ServiceDetail } from "@/lib/serviceDetails";
+import { detailServices } from "@/lib/serviceDetails";
+
 export const site = {
   name: "Valora Construction",
   legalName: "Valora Construction & Remodeling",
@@ -12,9 +15,16 @@ export const site = {
   city: "Tampa",
   region: "FL",
   radius: "45 miles",
-  maps: "https://maps.app.goo.gl/erwNjHJhQboDRp2cA",
+  maps: "https://maps.app.goo.gl/SNEs62g4isPy1NJD8",
   mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90000!2d-82.4499767!3d27.9665175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x28201d486250d9b1%3A0xaba381b87cb12510!2sValora%20Construction%20%26%20Remodeling!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus",
+    "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5504.130871576187!2d-82.435336!3d28.0047936!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6daba12019f81743%3A0xc18178939d31fa47!2sValora%20Construction%20%26%20Remodeling!5e1!3m2!1sen!2s!4v1793286881478!5m2!1sen!2s",
+  address: {
+    street: "2002 N Lincoln Ave",
+    city: "Tampa",
+    region: "FL",
+    postalCode: "33607",
+  },
+  geo: { latitude: 28.0047936, longitude: -82.435336 },
   promise:
     "At Valora Construction & Remodeling, we believe you deserve to feel heard, informed, and excited about your renovation. Our promise is to care for your home as if it were our own, with thoughtful design, clear communication, and craftsmanship that brings your vision to life.",
 };
@@ -22,7 +32,7 @@ export const site = {
 export type Service = {
   slug: string;
   name: string;
-  category: "Kitchen" | "Bathroom" | "Home" | "Flooring" | "Cabinet" | "Tile";
+  category: "Kitchen" | "Bathroom" | "Home" | "Flooring" | "Cabinet" | "Tile" | "Shower" | "Addition" | "Garage" | "Outdoor";
   signature?: boolean;
   eyebrow: string;
   headline: string;
@@ -34,6 +44,10 @@ export type Service = {
   metaDescription: string;
   includes: { title: string; text: string }[];
   faqs: { q: string; a: string }[];
+  /** Use metaTitle as the full <title>, without the site-name suffix. */
+  metaTitleAbsolute?: boolean;
+  /** Long-form page content. Services with a detail block render the full service-page layout. */
+  detail?: ServiceDetail;
 };
 
 export const services: Service[] = [
@@ -48,7 +62,7 @@ export const services: Service[] = [
       "Complete kitchen design and renovation, from the layout to the last fixture.",
     description:
       "Transform your kitchen with our complete design and renovation services. We bring your vision to life through thoughtful layouts, beautiful material selections, and expert installation of cabinetry, countertops, backsplash, and lighting. With plumbing, electrical, and finishing touches all handled by our team, we make the entire process seamless.",
-    image: "/gallery/waterfall-island.png",
+    image: "/gallery/waterfall-island.webp",
     imageAlt:
       "Kitchen island with a waterfall quartz counter, dark cabinets, and light wood-look flooring",
     metaTitle: "Kitchen Remodeling in Tampa",
@@ -130,7 +144,7 @@ export const services: Service[] = [
       },
       {
         title: "Waterproofing",
-        text: "Showers and wet areas are waterproofed before the tile goes on. The finish is only as good as what is behind it.",
+        text: "[Showers](/services/shower-remodeling) and wet areas are waterproofed before the tile goes on. The finish is only as good as what is behind it.",
       },
       {
         title: "Tile, vanity, and stone",
@@ -170,7 +184,7 @@ export const services: Service[] = [
       "Thoughtful updates or a full transformation, managed from concept to completion.",
     description:
       "Bring your dream home to life with our complete design and renovation services. From thoughtful updates to full home transformations, we create beautiful, functional spaces tailored to your style while managing every detail from concept to completion.",
-    image: "/gallery/hero-home-coastal.png",
+    image: "/gallery/hero-home-coastal.webp",
     imageAlt:
       "Open living room and kitchen with a linen sectional, light wood floors, and sliding doors to a waterfront patio",
     metaTitle: "Home Renovation in Tampa",
@@ -183,7 +197,7 @@ export const services: Service[] = [
       },
       {
         title: "Kitchens and baths",
-        text: "Most whole-home projects still turn on the kitchen and the baths. Those rooms are built to the same standard as a standalone remodel.",
+        text: "Most whole-home projects still turn on the [kitchen](/services/kitchen-remodel) and the [baths](/services/bathroom-remodel). Those rooms are built to the same standard as a standalone remodel.",
       },
       {
         title: "Living spaces",
@@ -373,7 +387,7 @@ export const services: Service[] = [
       },
       {
         title: "Showers",
-        text: "Shower walls, floors, niches, and benches. Waterproofing is in place before the tile goes on.",
+        text: "[Shower walls, floors, niches, and benches](/services/shower-remodeling). Waterproofing is in place before the tile goes on.",
       },
       {
         title: "Backsplash",
@@ -407,6 +421,7 @@ export const services: Service[] = [
       },
     ],
   },
+  ...detailServices,
 ];
 
 export type City = {
@@ -820,7 +835,7 @@ export const projects: Project[] = [
   {
     title: "Waterfall island kitchen",
     category: "Kitchen",
-    image: "/gallery/waterfall-island.png",
+    image: "/gallery/waterfall-island.webp",
     alt: "Kitchen island with a waterfall quartz counter, dark cabinets, a built-in oven, and light wood-look flooring",
     summary: "A waterfall stone island with the appliances built in, and new flooring running through the living space.",
     focus: "center 55%",

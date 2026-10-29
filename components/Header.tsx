@@ -80,6 +80,7 @@ export function Header() {
             alt="Valora Construction"
             width={1024}
             height={226}
+            sizes="(min-width: 1024px) 16rem, (min-width: 640px) 14rem, 11.5rem"
             priority
             className="h-10 w-auto sm:h-12 lg:h-14"
           />

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { site } from "@/lib/content";
 import { ButtonPair } from "@/components/ui";
 import { useHorizontalSwipe } from "@/lib/useHorizontalSwipe";
@@ -45,7 +45,7 @@ const circles = [
   },
 ];
 
-export function Testimonials() {
+export function Testimonials({ after }: { after?: ReactNode } = {}) {
   const [index, setIndex] = useState(0);
   const quote = quotes.length > 0 ? quotes[index % quotes.length] : null;
 
@@ -118,7 +118,7 @@ export function Testimonials() {
             <div className="absolute inset-x-4 -top-4 bottom-4 rounded-sm bg-sand/80" aria-hidden="true" />
             <div className="absolute inset-x-2 -top-2 bottom-2 rounded-sm bg-white/80" aria-hidden="true" />
             <blockquote className="relative border border-sand bg-white px-6 py-7 shadow-[0_16px_40px_rgba(36,31,26,0.06)] sm:px-8 sm:py-9" aria-live="polite">
-              <div className="flex gap-1 text-gold" aria-label="5 stars">
+              <div className="flex gap-1 text-gold" role="img" aria-label="5 stars">
                 {Array.from({ length: 5 }, (_, star) => (
                   <svg key={star} viewBox="0 0 20 20" className="h-4 w-4 fill-current">
                     <path d="m10 1.6 2.1 5.3 5.7.4-4.4 3.6 1.4 5.5L10 13.6 5.2 16.4 6.6 10.9 2.2 7.3l5.7-.4L10 1.6Z" />
@@ -153,6 +153,8 @@ export function Testimonials() {
           </div>
           ) : null}
         </div>
+
+        {after ? <div className="mt-10 sm:mt-12">{after}</div> : null}
 
         <div className="mt-12 flex justify-center sm:mt-14">
           <ButtonPair row>

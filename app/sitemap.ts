@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { cities, commercial, services, site } from "@/lib/content";
 
-const updated = new Date("2026-10-25");
+const updated = new Date("2026-10-29");
 
 function entry(path: string, priority: number, changeFrequency: "weekly" | "monthly" | "yearly"): MetadataRoute.Sitemap[number] {
   return {

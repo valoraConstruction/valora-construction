@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { useHorizontalSwipe } from "@/lib/useHorizontalSwipe";
 
 export type Step = {
@@ -11,6 +11,7 @@ export type Step = {
 
 export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
   const [active, setActive] = useState(0);
+  const base = useId();
   const count = steps.length;
 
   function select(index: number) {
@@ -29,13 +30,14 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
       <ol className="min-w-0">
         {steps.map((step, index) => {
           const open = index === active;
-          const panelId = `process-step-${step.n}`;
+          const panelId = `${base}-step-${step.n}`;
           return (
             <li key={step.n} className="border-b border-ink/15">
               <h3>
                 <button
                   type="button"
                   aria-expanded={open}
+                  id={`${panelId}-button`}
                   aria-controls={panelId}
                   onClick={() => select(index)}
                   className="flex w-full items-center gap-3 py-4 text-left sm:gap-4 sm:py-5"
@@ -64,6 +66,7 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
               <div
                 id={panelId}
                 role="region"
+                aria-labelledby={`${panelId}-button`}
                 aria-hidden={!open}
                 className={`grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
               >

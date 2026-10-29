@@ -37,7 +37,13 @@ const contacts = [
   },
 ] as const;
 
-export function Estimate() {
+export function Estimate({
+  title = "Start With the Room You Care About.",
+  text = "Send a few details and we'll follow up. If you'd rather talk now, give us a call.",
+}: {
+  title?: string;
+  text?: string;
+} = {}) {
   return (
     <section id="estimate" className="relative overflow-hidden bg-[#f6f1e7] text-ink">
       <div className="pointer-events-none absolute inset-0 hidden lg:block" aria-hidden="true">
@@ -70,12 +76,12 @@ export function Estimate() {
                 className="mt-4 max-w-[11em] text-[clamp(2.4rem,2.8vw,3.15rem)] font-normal leading-[1.12] text-ink"
                 style={{ fontFamily: 'Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, "Times New Roman", serif' }}
               >
-                Start With the Room You Care About.
+                {title}
               </h2>
             </div>
           </div>
           <p className="mt-4 max-w-sm text-[1.02rem] leading-relaxed text-stone lg:mt-5">
-            Send a few details and we&apos;ll follow up. If you&apos;d rather talk now, give us a call.
+            {text}
           </p>
           <ul className="mt-6 space-y-4">
             {contacts.map((item) => (

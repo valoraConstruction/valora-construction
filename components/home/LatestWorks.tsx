@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type TransitionEvent } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type TransitionEvent, type ReactNode } from "react";
 import Image from "next/image";
 import { PhotoLightbox } from "@/components/PhotoLightbox";
 import type { Project } from "@/lib/content";
@@ -12,7 +12,15 @@ type Filter = "All" | Project["category"];
 
 type Metrics = { slide: number; gap: number; view: number };
 
-export function LatestWorks({ items }: { items: Project[] }) {
+export function LatestWorks({
+  items,
+  title = "Latest Works",
+  lede,
+}: {
+  items: Project[];
+  title?: string;
+  lede?: ReactNode;
+}) {
   const filters: Filter[] = ["All", ...Array.from(new Set(items.map((item) => item.category)))];
   const [filter, setFilter] = useState<Filter>("All");
   const [index, setIndex] = useState(items.length);
@@ -204,8 +212,9 @@ export function LatestWorks({ items }: { items: Project[] }) {
           Projects
         </p>
         <h2 id="latest-works-heading" className="mt-4 font-display text-[2.7rem] font-medium leading-none text-ink sm:text-6xl">
-          Latest Works
+          {title}
         </h2>
+        {lede ? <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-[1.7] text-stone">{lede}</p> : null}
       </div>
 
       <div className="mt-10 flex justify-center px-6 sm:mt-12" role="group" aria-label="Filter projects">

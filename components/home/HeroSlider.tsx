@@ -25,7 +25,13 @@ const slides = [
   },
 ] as const;
 
-export function HeroSlider() {
+export function HeroSlider({
+  title = "Kitchen And Bath Remodeling From Valora",
+  lede = "Layouts, cabinetry, stone, tile, and the trades behind the walls. Designed and built for homes across Tampa Bay.",
+}: {
+  title?: string;
+  lede?: string;
+} = {}) {
   const [index, setIndex] = useState(0);
   const count = slides.length;
   const indexRef = useRef(0);
@@ -161,11 +167,9 @@ export function HeroSlider() {
       <div className="hero-copy pointer-events-none relative flex min-h-[100svh] w-full flex-col justify-end px-6 pb-28 pt-28 sm:px-10 lg:px-[11vw] wide:justify-center wide:pb-24 wide:pt-28">
         <p className="kicker">Build</p>
         <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
-          Kitchen And Bath Remodeling From Valora
+          {title}
         </h1>
-        <p className="mt-5 max-w-md text-base leading-relaxed text-cream/80 sm:text-lg">
-          Layouts, cabinetry, stone, tile, and the trades behind the walls. Designed and built for homes across Tampa Bay.
-        </p>
+        <p className="mt-5 max-w-md text-base leading-relaxed text-cream/80 sm:text-lg">{lede}</p>
         <ButtonPair row className="pointer-events-auto mt-8">
           <Link href="/contact" className="btn-gold">
             Get an Estimate

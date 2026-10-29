@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/about", destination: "/why-choose-us", permanent: true },
       { source: "/quote", destination: "/contact", permanent: true },
+      { source: "/before-and-after", destination: "/projects", permanent: true },
     ];
   },
   cacheComponents: true,

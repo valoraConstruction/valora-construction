@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CallToAction } from "@/components/CallToAction";
+import { MapEmbed } from "@/components/MapEmbed";
 import { LeadForm } from "@/components/LeadForm";
 import { site } from "@/lib/content";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
@@ -28,9 +29,9 @@ const contacts = [
     icon: "mail",
   },
   {
-    label: "Tampa, Florida",
-    text: `${site.radius} of Tampa`,
-    href: "",
+    label: site.address.street,
+    text: `${site.address.city}, ${site.address.region} ${site.address.postalCode} · ${site.radius} of Tampa`,
+    href: site.maps,
     icon: "pin",
   },
   {
@@ -183,17 +184,7 @@ function ServiceAreaMap() {
           maskImage: "radial-gradient(ellipse 92% 78% at 50% 50%, #000 58%, transparent 100%)",
         }}
       >
-        <iframe
-          title="Valora Construction & Remodeling on Google Maps"
-          src={site.mapEmbed}
-          className="h-full w-full border-0"
-          style={{
-            filter: "grayscale(0.2) sepia(0.28) saturate(0.75) brightness(1.05)",
-          }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
+        <MapEmbed style={{ filter: "grayscale(0.2) sepia(0.28) saturate(0.75) brightness(1.05)" }} />
       </div>
     </div>
   );

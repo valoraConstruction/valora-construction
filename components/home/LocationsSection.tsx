@@ -1,7 +1,21 @@
 import Link from "next/link";
-import { cities, site } from "@/lib/content";
+import { MapEmbed } from "@/components/MapEmbed";
+import { cities } from "@/lib/content";
 
-export function LocationsSection({ excludeSlug, map = false }: { excludeSlug?: string; map?: boolean }) {
+export function LocationsSection({
+  excludeSlug,
+  map = false,
+  title = "Tampa, and about 45 miles around it.",
+  lede,
+  label,
+}: {
+  excludeSlug?: string;
+  map?: boolean;
+  title?: string;
+  lede?: string;
+  /** Prefix for each city link, e.g. "Home Remodeling in". */
+  label?: string;
+}) {
   const items = cities.filter((city) => city.slug !== excludeSlug);
 
   return (
@@ -10,9 +24,8 @@ export function LocationsSection({ excludeSlug, map = false }: { excludeSlug?: s
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="kicker">Service area</p>
-            <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight sm:text-5xl">
-              Tampa, and about 45 miles around it.
-            </h2>
+            <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight sm:text-5xl">{title}</h2>
+            {lede ? <p className="mt-4 max-w-2xl text-[15px] leading-[1.7] text-stone">{lede}</p> : null}
           </div>
           <Link href="/locations" className="btn-ghost shrink-0">
             All service areas
@@ -28,7 +41,7 @@ export function LocationsSection({ excludeSlug, map = false }: { excludeSlug?: s
                 <span>
                   <span className="block text-[0.68rem] uppercase tracking-[0.2em] text-gold">{city.county}</span>
                   <span className="mt-2 block font-display text-2xl text-ink group-hover:text-gold-deep sm:text-3xl">
-                    {city.name}
+                    {label ? `${label} ${city.name}` : city.name}
                   </span>
                 </span>
                 <span aria-hidden="true" className="mb-1 text-sm tracking-[0.16em] text-gold">
@@ -40,17 +53,12 @@ export function LocationsSection({ excludeSlug, map = false }: { excludeSlug?: s
         </ul>
         {map ? (
           <div className="relative mt-14 h-[22rem] w-full overflow-hidden border border-ink/10 bg-[#f6f1e7] sm:h-[30rem]">
-            <iframe
-              title="Valora Construction & Remodeling on Google Maps"
-              src={site.mapEmbed}
-              className="absolute inset-0 h-full w-full border-0"
+            <MapEmbed
+              className="absolute inset-0"
               style={{
                 filter:
                   "grayscale(0.35) sepia(0.42) hue-rotate(12deg) saturate(0.7) brightness(1.08) contrast(0.92)",
               }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
             />
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[#e4dccb] opacity-60 mix-blend-soft-light" />
           </div>

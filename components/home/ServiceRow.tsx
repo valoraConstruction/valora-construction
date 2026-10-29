@@ -15,7 +15,7 @@ export type ServiceCard = {
   alt: string;
 };
 
-export function ServiceRow({ title, items }: { title: ReactNode; items: ServiceCard[] }) {
+export function ServiceRow({ title, lede, items }: { title: ReactNode; lede?: ReactNode; items: ServiceCard[] }) {
   const scroller = useRef<HTMLDivElement>(null);
   const origin = useRef(0);
 
@@ -91,6 +91,8 @@ export function ServiceRow({ title, items }: { title: ReactNode; items: ServiceC
         </div>
       </div>
 
+      {lede ? <p className="mt-6 max-w-2xl text-[15px] leading-[1.7] text-stone">{lede}</p> : null}
+
       <div
         ref={scroller}
         className="mt-10 flex touch-pan-y items-start gap-4 overflow-x-auto overscroll-x-contain pb-2 sm:mt-12 sm:gap-6 lg:mt-14 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -111,7 +113,7 @@ export function ServiceRow({ title, items }: { title: ReactNode; items: ServiceC
                 <p className="mt-3 text-[0.92rem] leading-[1.5] text-[#6a6a6a]">{item.text}</p>
                 <div className="mt-auto pt-5">
                   <Link href={item.href} className="btn-line px-4 py-2.5 text-[0.62rem] tracking-[0.16em]">
-                    Learn more
+                    Learn more<span className="sr-only"> about {item.title}</span>
                   </Link>
                 </div>
               </div>

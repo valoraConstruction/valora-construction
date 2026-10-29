@@ -5,7 +5,7 @@ import { LocationsSection } from "@/components/home/LocationsSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { JsonLd, PageHero } from "@/components/ui";
 import { site } from "@/lib/content";
-import { breadcrumbJsonLd, faqJsonLd, pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, pageMeta, serviceJsonLd } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Commercial General Contractor",
@@ -116,6 +116,7 @@ export default function CommercialPage() {
           { name: "Commercial general contractor", path: "/services/commercial-general-contractor" },
         ])}
       />
+      <JsonLd data={serviceJsonLd("commercial-general-contractor")} />
       <JsonLd data={faqJsonLd(faqs.map((faq) => ({ question: faq.title, answer: faq.text })))} />
       <PageHero
         word="Commercial"

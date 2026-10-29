@@ -5,9 +5,11 @@ import { CallToAction } from "@/components/CallToAction";
 import { LocationsSection } from "@/components/home/LocationsSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { DetailServicePage } from "@/components/service/DetailServicePage";
+import { RichText } from "@/components/service/RichText";
 import { JsonLd, PageHero } from "@/components/ui";
 import { getService, services } from "@/lib/content";
-import { breadcrumbJsonLd, faqJsonLd, pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, pageMeta, serviceJsonLd } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -27,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     path: `/services/${service.slug}`,
     image: service.image,
     imageAlt: service.imageAlt,
+    absolute: service.metaTitleAbsolute,
   });
 }
 
@@ -34,6 +37,24 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   const { slug } = await params;
   const service = getService(slug);
   if (!service) notFound();
+  const schema = serviceJsonLd(service.slug);
+
+  if (service.detail) {
+    return (
+      <>
+        <JsonLd
+          data={breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: service.detail.h1.replace(/ in Tampa, FL$/, ""), path: `/services/${service.slug}` },
+          ])}
+        />
+        {schema ? <JsonLd data={schema} /> : null}
+        <JsonLd data={faqJsonLd(service.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))} />
+        <DetailServicePage service={service} />
+      </>
+    );
+  }
 
   const heroes: Record<string, { image: string; imagePosition: string; imageAlt: string; imageFlip?: boolean }> = {
     flooring: {
@@ -48,7 +69,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         "Freestanding white soaking tub with a champagne-gold floor filler, plantation shutters, and patterned sand tile",
     },
     "home-renovation": {
-      image: "/gallery/hero-home-coastal.png",
+      image: "/gallery/hero-home-coastal.webp",
       imagePosition: "center 58%",
       imageAlt:
         "Open living room and kitchen with a linen sectional, light wood floors, and sliding doors to a waterfront patio",
@@ -88,6 +109,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           { name: service.name, path: `/services/${service.slug}` },
         ])}
       />
+      {schema ? <JsonLd data={schema} /> : null}
       <JsonLd data={faqJsonLd(service.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))} />
       <PageHero
         word={service.name}
@@ -148,7 +170,9 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
                 <p className="text-[1.05rem] font-medium leading-none text-stone sm:text-[1.2rem]">{String(index + 1).padStart(2, "0")}</p>
                 <div className="mt-3 flex min-h-[13.5rem] flex-col bg-white px-5 pb-5 pt-5 shadow-[0_12px_30px_rgba(36,31,26,0.08)] sm:min-h-[14.5rem] sm:px-6 sm:pb-6 sm:pt-6">
                   <h3 className="text-sm font-medium uppercase leading-snug tracking-[0.06em] text-[#111]">{item.title}</h3>
-                  <p className="mt-3 text-[0.92rem] leading-[1.5] text-[#6a6a6a]">{item.text}</p>
+                  <p className="mt-3 text-[0.92rem] leading-[1.5] text-[#6a6a6a]">
+                    <RichText text={item.text} />
+                  </p>
                 </div>
               </li>
             ))}

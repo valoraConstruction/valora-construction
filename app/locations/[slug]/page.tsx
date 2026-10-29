@@ -172,7 +172,7 @@ export default async function LocationPage({ params }: { params: Promise<Params>
       />
 
       <ServicesSection title={<>Services in {city.name}</>} />
-      <LocationsSection excludeSlug={city.slug} />
+      <LocationsSection excludeSlug={city.slug} map />
 
       <CallToAction />
     </>
