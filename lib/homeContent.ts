@@ -17,11 +17,11 @@ export const home = {
   h1: "Home Remodeling & Whole Home Renovation in Tampa, FL",
   subtitle: "Kitchens, bathrooms, floors, and every room in between, designed and built by one licensed, family-owned Tampa team",
   intro:
-    "Maybe the kitchen still has the builder's oak cabinets. Maybe the bathrooms haven't changed since the house was built, and the floors switch material every time you walk through a doorway. You've thought about fixing it one project at a time, but every contractor handles a single piece, and you end up managing all of them. Valora Construction & Remodeling plans and builds your home remodel as one project, with one team, one written scope, and one number to call.",
+    "Maybe the kitchen still has the builder's oak cabinets. Maybe the bathrooms haven't changed since the house was built, and the floors switch material every time you walk through a doorway. You've thought about fixing it one project at a time, but every contractor handles a single piece, and you end up managing all of them. Valora Construction & Remodeling Tampa plans and builds your home remodel as one project, with one team, one written scope, and one number to call.",
   trust: ["Florida License CBC1270738", "5-Star Google Reviews", "Family-Owned in Tampa", "Open Daily 6:00 AM to 11:00 PM"],
   estimate: {
     title: "Tell Us What Isn't Working",
-    text: "Call Valora Construction & Remodeling at (813) 240-5570 or request an estimate online. We'll come to the house, measure, and give you an honest read on what's possible.",
+    text: "Call Valora Construction & Remodeling Tampa at (813) 240-5570 or request an estimate online. We'll come to the house, measure, and give you an honest read on what's possible.",
   },
   definition: {
     kind: "prose",
@@ -158,13 +158,13 @@ export const home = {
     title: "Meet Amanda Neve, Owner of Valora Construction",
     paragraphs: [
       "Amanda Neve started renovating homes in 2020, flipping houses in Knoxville, Tennessee. She came to construction from interior design, and the work quickly became more than a creative outlet: it turned into a real appreciation for craftsmanship and the details that make a house feel like home.",
-      "After moving to Tampa, she founded Valora Construction & Remodeling as a local, family-owned company. To Amanda, luxury isn't about the most expensive materials. It's about thoughtful design, careful workmanship, and making sure every detail feels right. She wants every client to come away feeling confident in the process and excited about the result.",
+      "After moving to Tampa, she founded Valora Construction & Remodeling Tampa as a local, family-owned company. To Amanda, luxury isn't about the most expensive materials. It's about thoughtful design, careful workmanship, and making sure every detail feels right. She wants every client to come away feeling confident in the process and excited about the result.",
     ],
   },
   why: {
     kind: "list",
     kicker: "Why Valora",
-    title: "Why Tampa Homeowners Choose Valora Construction & Remodeling",
+    title: "Why Tampa Homeowners Choose Valora Construction & Remodeling Tampa",
     items: [
       {
         lead: "You stay informed.",
@@ -232,7 +232,7 @@ export const home = {
     label: "Home Remodeling in",
   },
   visit: {
-    title: "Visit or Contact Valora Construction & Remodeling",
+    title: "Visit or Contact Valora Construction & Remodeling Tampa",
   },
   faqTitle: "Common Questions About Home Remodeling in Tampa",
   faqs: [
@@ -260,6 +260,6 @@ export const home = {
   final: {
     title: "Build, Renovate, Elevate: Start Your Home Remodel",
     text: "Your house should fit the way you live now. Tell us what bothers you about it, and we'll show you how a home remodel can turn it into a home you truly love.",
-    closing: `Call Valora Construction & Remodeling at (813) 240-5570 or [request your estimate online](/contact). Want to hear from past clients first? [Read our Google reviews](${GOOGLE_REVIEWS}).`,
+    closing: `Call Valora Construction & Remodeling Tampa at (813) 240-5570 or [request your estimate online](/contact). Want to hear from past clients first? [Read our Google reviews](${GOOGLE_REVIEWS}).`,
   },
 };

@@ -78,7 +78,7 @@ export default function HomePage() {
           <div className="flex items-center justify-start md:justify-end">
             <Image
               src="/brand/logo.png"
-              alt="Valora Construction & Remodeling"
+              alt="Valora Construction & Remodeling Tampa"
               width={1024}
               height={682}
               className="h-40 w-auto sm:h-52"

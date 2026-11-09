@@ -73,7 +73,7 @@ const shower: Service = {
   summary:
     "Walk-in showers and tub-to-shower conversions, waterproofed before any tile goes up.",
   description:
-    "Grout that never looks clean. A tile that sounds hollow when you tap it. A musty smell that comes back a week after you scrub. In Tampa's humidity, a shower that leaks behind the tile can rot framing and grow mold long before a stain shows up. Valora Construction & Remodeling rebuilds your shower from the studs or slab out, so the tile you choose has a sound, waterproofed wall behind it.",
+    "Grout that never looks clean. A tile that sounds hollow when you tap it. A musty smell that comes back a week after you scrub. In Tampa's humidity, a shower that leaks behind the tile can rot framing and grow mold long before a stain shows up. Valora Construction & Remodeling Tampa rebuilds your shower from the studs or slab out, so the tile you choose has a sound, waterproofed wall behind it.",
   image: "/gallery/patterned-tile-shower.webp",
   imageAlt: "Walk-in shower with patterned wall tile, a pebble floor, and a frameless glass door",
   metaTitle: "Shower Remodeling in Tampa, FL - Walk-In Showers - Valora",
@@ -154,7 +154,7 @@ const shower: Service = {
     },
     estimate: {
       title: "Ready for a Shower You Actually Like Using?",
-      text: "Call Valora Construction & Remodeling at (813) 240-5570 or schedule an estimate online. Tell us what bothers you about the shower you have now, and we'll start there.",
+      text: "Call Valora Construction & Remodeling Tampa at (813) 240-5570 or schedule an estimate online. Tell us what bothers you about the shower you have now, and we'll start there.",
     },
     sections: [
       {
@@ -358,7 +358,7 @@ const shower: Service = {
       title: "Book Your Shower Remodel",
       text: "You shouldn't have to scrub around the same problem every week. Let's build a shower that stays dry behind the tile and looks the way you pictured it.",
       closing:
-        `Call Valora Construction & Remodeling at (813) 240-5570 or [request an estimate online](/contact). Want to hear from past clients first? Read our [Google reviews](${GOOGLE_REVIEWS}).`,
+        `Call Valora Construction & Remodeling Tampa at (813) 240-5570 or [request an estimate online](/contact). Want to hear from past clients first? Read our [Google reviews](${GOOGLE_REVIEWS}).`,
     },
   },
 };
@@ -371,7 +371,7 @@ const refacing: Service = {
   headline: "Kitchen cabinet refacing",
   summary: "New doors, drawer fronts, and veneer on solid cabinet boxes with kitchen cabinet refacing.",
   description:
-    "Your cabinets still hold everything. They just look tired: honey oak from the 1990s, doors with peeling thermofoil, hinges that never quite close. Tearing it all out means weeks without a kitchen and a bill to match. Kitchen cabinet refacing from Valora Construction & Remodeling gives you a kitchen that looks new while your sound cabinet boxes, your layout, and often your countertops stay right where they are.",
+    "Your cabinets still hold everything. They just look tired: honey oak from the 1990s, doors with peeling thermofoil, hinges that never quite close. Tearing it all out means weeks without a kitchen and a bill to match. Kitchen cabinet refacing from Valora Construction & Remodeling Tampa gives you a kitchen that looks new while your sound cabinet boxes, your layout, and often your countertops stay right where they are.",
   image: "/gallery/oak-shaker-kitchen.webp",
   imageAlt: "Oak shaker kitchen cabinets with brushed pulls, a stainless range, and a chimney hood",
   metaTitle: "Kitchen Cabinet Refacing in Tampa, FL - Valora Construction",
@@ -448,7 +448,7 @@ const refacing: Service = {
     },
     estimate: {
       title: "Curious What Your Kitchen Looks Like With New Doors?",
-      text: "Call Valora Construction & Remodeling at (813) 240-5570 or book an estimate online. Send us photos of kitchens you like, and we'll talk through door styles that suit your house.",
+      text: "Call Valora Construction & Remodeling Tampa at (813) 240-5570 or book an estimate online. Send us photos of kitchens you like, and we'll talk through door styles that suit your house.",
     },
     sections: [
       {
@@ -661,7 +661,7 @@ const refacing: Service = {
       title: "Get a Quote on Kitchen Cabinet Refacing",
       text: "You don't need to gut a kitchen that only needs a new face. Let's look at your cabinets together and find out if refacing is the right fit.",
       closing:
-        `Call Valora Construction & Remodeling at (813) 240-5570 or [request your estimate online](/contact). See what clients say on our [Google reviews](${GOOGLE_REVIEWS}).`,
+        `Call Valora Construction & Remodeling Tampa at (813) 240-5570 or [request your estimate online](/contact). See what clients say on our [Google reviews](${GOOGLE_REVIEWS}).`,
     },
   },
 };
@@ -674,7 +674,7 @@ const additions: Service = {
   headline: "Room additions",
   summary: "A bedroom suite, family room, or kitchen bump-out, built to match the original house.",
   description:
-    "A new baby, a parent moving in, a job that now happens at the kitchen table. Your house worked fine until it didn't, and now every room is doing two jobs. Selling and starting over in another neighborhood is expensive and exhausting. A room addition from Valora Construction & Remodeling gives you the space you need on the lot you already own, built so it looks like it was always part of the house.",
+    "A new baby, a parent moving in, a job that now happens at the kitchen table. Your house worked fine until it didn't, and now every room is doing two jobs. Selling and starting over in another neighborhood is expensive and exhausting. A room addition from Valora Construction & Remodeling Tampa gives you the space you need on the lot you already own, built so it looks like it was always part of the house.",
   image: "/gallery/navy-island-open-kitchen.webp",
   imageAlt: "Open kitchen and living space with a navy island, a white waterfall counter, square columns, and a barn door",
   metaTitle: "Room Additions in Tampa, FL - Home Additions - Valora",
@@ -751,7 +751,7 @@ const additions: Service = {
     },
     estimate: {
       title: "Thinking About Adding On?",
-      text: "Call Valora Construction & Remodeling at (813) 240-5570 any day from 6:00 AM to 11:00 PM, or request your estimate online. We'll measure, look at your lot, and tell you what's possible before you spend a dollar on drawings.",
+      text: "Call Valora Construction & Remodeling Tampa at (813) 240-5570 any day from 6:00 AM to 11:00 PM, or request your estimate online. We'll measure, look at your lot, and tell you what's possible before you spend a dollar on drawings.",
     },
     sections: [
       {
@@ -843,7 +843,7 @@ const additions: Service = {
       ],
     },
     why: {
-      title: "Why Choose Valora Construction & Remodeling for Your Home Addition",
+      title: "Why Choose Valora Construction & Remodeling Tampa for Your Home Addition",
       items: [
         {
           title: "Licensed for Additions, Not Only Remodels",
@@ -945,7 +945,7 @@ const additions: Service = {
       title: "Start Planning Your Room Addition",
       text: "More room doesn't have to mean a new address. Tell us how your family uses the house and what's missing, and we'll show you what an addition can look like on your lot.",
       closing:
-        `Call Valora Construction & Remodeling at (813) 240-5570 or [request an estimate online](/contact). You can also read our [Google reviews](${GOOGLE_REVIEWS}).`,
+        `Call Valora Construction & Remodeling Tampa at (813) 240-5570 or [request an estimate online](/contact). You can also read our [Google reviews](${GOOGLE_REVIEWS}).`,
     },
   },
 };
@@ -958,7 +958,7 @@ const garage: Service = {
   headline: "Garage conversion",
   summary: "Turn unused garage space into a bedroom, office, or in-law suite with a permitted garage conversion.",
   description:
-    "The car hasn't been in the garage in years. It holds boxes, a second fridge, and summer heat you can feel through the door. Meanwhile, you need a guest room, a quiet office, or a place for a parent to live. A garage conversion from Valora Construction & Remodeling turns space already under your roof into a real room, with a level floor, insulated walls, cool air, and a permit on file.",
+    "The car hasn't been in the garage in years. It holds boxes, a second fridge, and summer heat you can feel through the door. Meanwhile, you need a guest room, a quiet office, or a place for a parent to live. A garage conversion from Valora Construction & Remodeling Tampa turns space already under your roof into a real room, with a level floor, insulated walls, cool air, and a permit on file.",
   image: "/gallery/hero-living-oak.webp",
   imageAlt: "Wide oak floor in a bright living room with tall windows and a fireplace",
   metaTitle: "Garage Conversion in Tampa, FL - Garage to Living Space - Valora",
@@ -1035,7 +1035,7 @@ const garage: Service = {
     },
     estimate: {
       title: "Let's Look at Your Garage Together",
-      text: "Call Valora Construction & Remodeling at (813) 240-5570 or request an estimate online. We'll check the slab, the walls, and the rules for your address before we talk about finishes.",
+      text: "Call Valora Construction & Remodeling Tampa at (813) 240-5570 or request an estimate online. We'll check the slab, the walls, and the rules for your address before we talk about finishes.",
     },
     sections: [
       {
@@ -1159,7 +1159,7 @@ const garage: Service = {
       ],
     },
     why: {
-      title: "Why Choose Valora Construction & Remodeling for Your Garage Conversion",
+      title: "Why Choose Valora Construction & Remodeling Tampa for Your Garage Conversion",
       items: [
         {
           title: "A Real Room, Not a Garage With Carpet",
@@ -1238,7 +1238,7 @@ const garage: Service = {
       title: "Start Your Garage Conversion",
       text: "You already own the space. Let's turn it into a room your family uses every day.",
       closing:
-        `Call Valora Construction & Remodeling at (813) 240-5570 or [request an estimate online](/contact). You can also read our [Google reviews](${GOOGLE_REVIEWS}) before you call.`,
+        `Call Valora Construction & Remodeling Tampa at (813) 240-5570 or [request an estimate online](/contact). You can also read our [Google reviews](${GOOGLE_REVIEWS}) before you call.`,
     },
   },
 };
@@ -1251,7 +1251,7 @@ const outdoor: Service = {
   headline: "Outdoor kitchen construction",
   summary: "Grill islands, weather-ready counters, and lanai bars from our outdoor kitchen construction team.",
   description:
-    "Tampa gives you outdoor weather almost all year, yet most backyard cooking still happens on a rolling grill parked on the pavers. You run inside for a knife, a plate, a cold drink, then back out while the burgers char. In August, turning on the indoor oven only fights your air conditioning. Outdoor kitchen construction from Valora Construction & Remodeling puts the grill, counter space, sink, and fridge where you actually entertain, built from materials that hold up to Florida sun and storms.",
+    "Tampa gives you outdoor weather almost all year, yet most backyard cooking still happens on a rolling grill parked on the pavers. You run inside for a knife, a plate, a cold drink, then back out while the burgers char. In August, turning on the indoor oven only fights your air conditioning. Outdoor kitchen construction from Valora Construction & Remodeling Tampa puts the grill, counter space, sink, and fridge where you actually entertain, built from materials that hold up to Florida sun and storms.",
   image: "/gallery/black-shaker-wet-bar.webp",
   imageAlt: "Built-in wet bar with black shaker cabinets, two wine refrigerators, oak floating shelves, and a forest mural",
   metaTitle: "Outdoor Kitchen Construction in Tampa, FL - Valora Construction",
@@ -1328,7 +1328,7 @@ const outdoor: Service = {
     },
     estimate: {
       title: "Planning a Backyard Kitchen?",
-      text: "Call Valora Construction & Remodeling at (813) 240-5570 or request an estimate online. We'll look at your lanai or patio, how you like to host, and where the gas and water can run.",
+      text: "Call Valora Construction & Remodeling Tampa at (813) 240-5570 or request an estimate online. We'll look at your lanai or patio, how you like to host, and where the gas and water can run.",
     },
     sections: [
       {
@@ -1459,7 +1459,7 @@ const outdoor: Service = {
       ],
     },
     why: {
-      title: "Why Choose Valora Construction & Remodeling for Your Outdoor Kitchen",
+      title: "Why Choose Valora Construction & Remodeling Tampa for Your Outdoor Kitchen",
       items: [
         {
           title: "Kitchen Specialists, Indoors and Out",
@@ -1532,7 +1532,7 @@ const outdoor: Service = {
       title: "Start Designing Your Outdoor Kitchen",
       text: "Your best gatherings already happen outside. Let's give them a kitchen that keeps up.",
       closing:
-        `Call Valora Construction & Remodeling at (813) 240-5570 or [request an estimate online](/contact). See what our clients say in our [Google reviews](${GOOGLE_REVIEWS}).`,
+        `Call Valora Construction & Remodeling Tampa at (813) 240-5570 or [request an estimate online](/contact). See what our clients say in our [Google reviews](${GOOGLE_REVIEWS}).`,
     },
   },
 };

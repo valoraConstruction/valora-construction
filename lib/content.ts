@@ -3,7 +3,7 @@ import { detailServices } from "@/lib/serviceDetails";
 
 export const site = {
   name: "Valora Construction",
-  legalName: "Valora Construction & Remodeling",
+  legalName: "Valora Construction & Remodeling Tampa",
   tagline: "Build | Renovate | Elevate",
   domain: "valora-construction.com",
   url: "https://valora-construction.com",
@@ -17,7 +17,7 @@ export const site = {
   radius: "45 miles",
   maps: "https://maps.app.goo.gl/SNEs62g4isPy1NJD8",
   mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5504.130871576187!2d-82.435336!3d28.0047936!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6daba12019f81743%3A0xc18178939d31fa47!2sValora%20Construction%20%26%20Remodeling!5e1!3m2!1sen!2s!4v1793286881478!5m2!1sen!2s",
+    "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d112724.60024988031!2d-82.5111674146025!3d28.004793599999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6daba12019f81743%3A0xc18178939d31fa47!2sValora%20Construction%20%26%20Remodeling%20Tampa!5e0!3m2!1sen!2s!4v1794230845767!5m2!1sen!2s",
   address: {
     street: "2002 N Lincoln Ave",
     city: "Tampa",
@@ -26,7 +26,7 @@ export const site = {
   },
   geo: { latitude: 28.0047936, longitude: -82.435336 },
   promise:
-    "At Valora Construction & Remodeling, we believe you deserve to feel heard, informed, and excited about your renovation. Our promise is to care for your home as if it were our own, with thoughtful design, clear communication, and craftsmanship that brings your vision to life.",
+    "At Valora Construction & Remodeling Tampa, we believe you deserve to feel heard, informed, and excited about your renovation. Our promise is to care for your home as if it were our own, with thoughtful design, clear communication, and craftsmanship that brings your vision to life.",
 };
 
 export type Service = {

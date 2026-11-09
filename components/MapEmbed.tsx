@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import { site } from "@/lib/content";
 
 /**
- * The Google Maps embed for Valora Construction & Remodeling (supplied embed URL, lazy loading,
+ * The Google Maps embed for Valora Construction & Remodeling Tampa (supplied embed URL, lazy loading,
  * fullscreen, and strict-origin-when-cross-origin referrer policy). It fills its parent, so the
  * parent sets the size; width/height stay as the supplied 600x450 fallback.
  */

@@ -17,7 +17,7 @@ export const REVIEW_WIDGET_MARKUP = String.raw`<!-- Begin Review Link Generator 
   <div class="rlg-popup-content">
     <button type="button" id="rlgClosePopup" class="rlg-close" aria-label="Close">&times;</button>
     <div class="rlg-review-container">
-      <h2 class="rlg-title" id="rlgTitle">Valora Construction &amp; Remodeling</h2>
+      <h2 class="rlg-title" id="rlgTitle">Valora Construction &amp; Remodeling Tampa</h2>
       <p class="rlg-subtitle">We value your feedback! Please rate our service.</p>
 
       <div class="rlg-star-rating-wrapper">
@@ -334,7 +334,7 @@ export const REVIEW_WIDGET_MARKUP = String.raw`<!-- Begin Review Link Generator 
 export const REVIEW_WIDGET_SCRIPT = String.raw`(function() {
   var rlgReviewLink = "https://search.google.com/local/writereview?placeid=ChIJQxf4GSChq20RR_oxnZN4gcE";
   var rlgEmail = "office@valora-construction.com";
-  var rlgBusinessName = "Valora Construction & Remodeling";
+  var rlgBusinessName = "Valora Construction & Remodeling Tampa";
   var rlgPlatform = "google";
   var rlgMinRating = 4;
   var platformHash = '#review';

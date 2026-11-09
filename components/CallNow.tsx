@@ -118,7 +118,7 @@ export function CallNow() {
             <div className="relative z-10 w-full px-6 pb-8 pt-2 sm:px-8 md:w-[22.5rem] md:px-8 md:py-9">
               <Image
                 src="/brand/logo.png"
-                alt="Valora Construction & Remodeling"
+                alt="Valora Construction & Remodeling Tampa"
                 width={1024}
                 height={682}
                 className="mx-auto h-32 w-auto sm:h-36"

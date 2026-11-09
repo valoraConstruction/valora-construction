@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     template: "%s | Valora Construction",
   },
   description:
-    "Valora Construction & Remodeling designs and builds kitchen remodels, bathroom remodels, and whole-home renovations in Tampa Bay. Licensed CBC1270738.",
+    "Valora Construction & Remodeling Tampa designs and builds kitchen remodels, bathroom remodels, and whole-home renovations in Tampa Bay. Licensed CBC1270738.",
   openGraph: {
     type: "website",
     locale: "en_US",
