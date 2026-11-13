@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "id": 1408921251,
+      "slug": "repair-replace-kitchen-cabinets",
+      "title": "Repair or Replace Kitchen Cabinets in Tampa",
+      "excerpt": "A practical guide to deciding whether to repair, refinish, or replace your kitchen cabinets in Tampa, with Tampa-specific cost and climate considerations and a short homeowner checklist.",
+      "url": "https://valora-construction.com/blogs/repair-replace-kitchen-cabinets/",
+      "publishedAt": "2026-11-13T23:01:03.235Z"
+    },
+    {
       "id": 1473366569,
       "slug": "tile-installation-mistakes-business-owners",
       "title": "5 Tile Installation Mistakes Tampa Business Owners Make",
@@ -23,14 +31,6 @@
       "excerpt": "Seven clear signs that it is time to remodel your bathroom, with practical advice on costs, priorities, and how to prepare so the project goes smoothly.",
       "url": "https://valora-construction.com/blogs/signs-bathroom-needs-remodel/",
       "publishedAt": "2026-11-20T17:23:00.000Z"
-    },
-    {
-      "id": 1408921251,
-      "slug": "repair-replace-kitchen-cabinets",
-      "title": "Repair or Replace Kitchen Cabinets in Tampa",
-      "excerpt": "A practical guide to deciding whether to repair, refinish, or replace your kitchen cabinets in Tampa, with Tampa-specific cost and climate considerations and a short homeowner checklist.",
-      "url": "https://valora-construction.com/blogs/repair-replace-kitchen-cabinets/",
-      "publishedAt": "2026-11-13T22:46:00.000Z"
     }
   ],
   "ownedListing": true
